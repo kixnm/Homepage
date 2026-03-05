@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AREW 2023 Access</title>
+  <link rel="stylesheet" href="../../style.css" />
+
+  <!-- フォント（Google Sitesっぽく Lato 系） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 固定ヘッダー -->
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <a class="brand" href="#">AREW 2023</a>
+
+      <!-- PCナビ -->
+      <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
+        <a href="./past_2023_home.html" class="nav__link">Home</a>
+        <a href="#access" class="nav__link">Access</a>
+        <a href="#application" class="nav__link">Application</a>
+        <a href="#Program" class="nav__link">Program</a>
+        <a href="#Aministrative office">Administrative Office</a>
+      </nav>
+
+      <!-- 検索（見た目だけでも可） -->
+      <div class="search">
+        <input id="siteSearch" type="search" placeholder="このサイトを検索" aria-label="このサイトを検索">
+      </div>
+
+      <!-- モバイル：ハンバーガー -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- モバイルメニュー -->
+    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+        <a href="#home" class="nav__link">Home</a>
+        <a href="#access" class="nav__link">Access</a>
+        <a href="#application" class="nav__link">Application</a>
+        <a href="#Program" class="nav__link">Program</a>
+        <a href="#Aministrative office">Administrative Office</a>
+    </nav>
+  </header>
+
+  <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
+  <section id="home" class="hero" aria-label="トップ">
+    <div class="hero__bg" style="background-image:url('assets/hero.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <h1 class="hero__title">第1回 応用地域経済学ワークショップ</h1>
+      <h2 class="hero__subtitle">Applied Regional Economics Workshop 2023</h2>
+    </div>
+  </section>
+
+  <main class="container">
+  
+    <!-- Home -->
+    <section class="section" id="news" data-searchable>
+      <h2 class="section__title section__title--green">会場</h2>
+      <ul class="news">
+        <li>
+          会場
+        </li>
+        <p>日本大学経済学部(東京都千代田区神田三崎町1-3-2)</p>
+        <p><u><b>3号館3階3131教室</b></u></p>
+    </section>
+
+    <!-- Official Access -->
+    <section class="OfficialAccess" id="OfficialAccess" data-searchable>
+      <h2>会場までのアクセス</h2>
+      <a href="https://www.eco.nihon-u.ac.jp/access/">交通アクセス</a>
+    </section>
+
+    <!-- Google map -->
+    <section class="GoogleMap" id="Googlemap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d525.2269390192378!2d139.7558083025148!3d35.70057214650891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c158bb93fab%3A0xbb30cfa371c8f974!2z5pel5pys5aSn5a2mIOe1jOa4iOWtpumDqA!5e0!3m2!1sja!2sjp!4v1772622114450!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>  
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small>© Seminar / Workshop</small>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+
+    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
+    const q = document.getElementById('siteSearch');
+    q?.addEventListener('input', () => {
+      const keyword = q.value.trim().toLowerCase();
+      document.querySelectorAll('[data-searchable]').forEach(sec => {
+        const text = sec.innerText.toLowerCase();
+        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
