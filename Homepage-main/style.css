@@ -266,6 +266,8 @@ footer{
   font-weight: 800;
   letter-spacing: .02em;
   text-decoration: none;
+  font-size: clamp(18px, 1.9vw, 24px);
+  line-height: 1;
 }
 
 .topbar .nav{
@@ -366,5 +368,15 @@ footer{
     display: block;
     border-color: var(--line);
     background: rgba(255,255,255,.04);
+  }
+}
+
+.hero__inner{
+  padding-left: 26px;
+}
+
+@media (max-width: 860px){
+  .hero__inner{
+    padding-left: 16px;
   }
 }
