@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AREW 過去の開催</title>
+  <title>AREW Homepage</title>
   <link rel="stylesheet" href="./style.css" />
 
   <!-- フォント（Google Sitesっぽく Lato 系） -->
@@ -18,14 +18,13 @@
   <!-- 固定ヘッダー -->
   <header class="topbar" role="banner">
     <div class="topbar__inner">
-      <a class="brand" href="#">AREW</a>
+      <a class="brand" href="#">AREW 過去の開催</a>
 
       <!-- PCナビ -->
       <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
-        <a href="#home" class="nav__link">Home</a>
-        <a href="#workshops" class="nav__link">Workshops</a>
-        <a href="#past" class="nav__link">Past</a>
-        <a href="#english" class="nav__link">English</a>
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="workshop_home.html" class="nav__link">Workshop</a>
+      <a href="past_workshop.html" class="nav__link">Past workshop</a>
       </nav>
 
       <!-- 検索（見た目だけでも可） -->
@@ -33,18 +32,17 @@
         <input id="siteSearch" type="search" placeholder="このサイトを検索" aria-label="このサイトを検索">
       </div>
 
-      <!-- モバイル：ハンバーガー -->
+      <!-- モバイル：ハンバーガー
       <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-    </div>
+    </div> -->
 
     <!-- モバイルメニュー -->
     <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
-      <a href="#home" class="nav__link">Home</a>
-      <a href="#workshops" class="nav__link">Workshops</a>
-      <a href="#past" class="nav__link">Past</a>
-      <a href="#english" class="nav__link">English</a>
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="workshop_home.html" class="nav__link">Workshop</a>
+      <a href="past_workshop.html" class="nav__link">Past workshop</a>
     </nav>
   </header>
 
@@ -65,45 +63,19 @@
       <h2 class="section__title section__title--green">過去の開催</h2>
       <ul class="news">
         <li>
-          第3回AREWを沖縄県那覇市で開催しました。
-          <a href="#workshops">詳細</a>
+          第3回AREW@沖縄県那覇市で開催しました。
+          <a href="./past_workshop/past_2025">詳細</a>
         </li>
         <li>
-          第2回AREWを京都産業大学で開催しました。
-          <a href="#workshops">詳細</a>
+          第2回AREW@京都産業大学で開催しました。
+          <a href="./past_workshop/past_2024/past_2024_home.html">詳細</a>
         </li>
         <li>
-          第1回AREWを日本大学で開催しました。
-          <a href="#workshops">詳細</a>
+          第1回AREW@日本大学で開催しました。
+          <a href="./past_workshop/past_2023/past_2023_home.html">詳細</a>
         </li>
       </ul>
 
-    </section>
-
-    <!-- 埋め込み（Google Sheets / スケジュールなど） -->
-    <section class="section" data-searchable>
-      <h2 class="section__title">スケジュール</h2>
-      <div class="embed">
-        <iframe
-          src="https://docs.google.com/spreadsheets/d/e/XXXXXXXX/pubhtml?widget=true&amp;headers=false"
-          loading="lazy"
-          title="スケジュール"
-        ></iframe>
-      </div>
-      <p class="muted">
-        <!-- ※Google Sheets側で「ウェブに公開」したURLを貼ってください。-->
-      </p>
-    </section>
-
-    <!-- 問合せ -->
-    <section class="section" id="contact" data-searchable>
-      <h2 class="section__title">問合せ</h2>
-      <p>
-        <a class="button button--ghost" href="https://forms.gle/XXXX" target="_blank" rel="noopener">
-          問合せフォーム
-        </a>
-        <span class="muted">（コメントはいつでも歓迎です）</span>
-      </p>
     </section>
 
   </main>
