@@ -3,101 +3,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AREW 驕主悉縺ｮ髢句ぎ</title>
+  <title>AREW 過去の開催</title>
   <link rel="stylesheet" href="./style.css" />
 
-  <!-- 繝輔か繝ｳ繝茨ｼ・oogle Sites縺｣縺ｽ縺・Lato 邉ｻ・・-->
+  <!-- フォント（Google Sitesっぽく Lato 系） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- 蝗ｺ螳壹・繝・ム繝ｼ -->
+  <!-- 固定ヘッダー -->
   <header class="topbar" role="banner">
     <div class="topbar__inner">
       <a class="brand" href="#">AREW</a>
 
-      <!-- PC繝翫ン -->
-      <nav class="nav nav--pc" aria-label="繧ｰ繝ｭ繝ｼ繝舌Ν繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ">
-        <a href="index.html" class="nav__link">Home</a>
+      <!-- PCナビ -->
+      <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
+        <a href="#home" class="nav__link">Home</a>
         <a href="#workshops" class="nav__link">Workshops</a>
         <a href="#past" class="nav__link">Past</a>
         <a href="#english" class="nav__link">English</a>
       </nav>
 
-      <!-- 讀懃ｴ｢・郁ｦ九◆逶ｮ縺縺代〒繧ょ庄・・-->
+      <!-- 検索（見た目だけでも可） -->
       <div class="search">
-        <input id="siteSearch" type="search" placeholder="縺薙・繧ｵ繧､繝医ｒ讀懃ｴ｢" aria-label="縺薙・繧ｵ繧､繝医ｒ讀懃ｴ｢">
+        <input id="siteSearch" type="search" placeholder="このサイトを検索" aria-label="このサイトを検索">
       </div>
 
-      <!-- 繝｢繝舌う繝ｫ・壹ワ繝ｳ繝舌・繧ｬ繝ｼ -->
-      <button class="hamburger" id="hamburger" aria-label="繝｡繝九Η繝ｼ繧帝幕縺・ aria-expanded="false">
+      <!-- モバイル：ハンバーガー -->
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- 繝｢繝舌う繝ｫ繝｡繝九Η繝ｼ -->
-    <nav class="nav nav--mobile" id="mobileNav" aria-label="繝｢繝舌う繝ｫ繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ">
-      <a href="index.html" class="nav__link">Home</a>
+    <!-- モバイルメニュー -->
+    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+      <a href="#home" class="nav__link">Home</a>
       <a href="#workshops" class="nav__link">Workshops</a>
       <a href="#past" class="nav__link">Past</a>
       <a href="#english" class="nav__link">English</a>
     </nav>
   </header>
 
-  <!-- 繝偵・繝ｭ繝ｼ・・oogle Sites縺｣縺ｽ縺・､ｧ縺阪＞閭梧勹逕ｻ蜒擾ｼ九が繝ｼ繝舌・繝ｬ繧､・・-->
-  <section id="home" class="hero" aria-label="繝医ャ繝・>
+  <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
+  <section id="home" class="hero" aria-label="トップ">
     <div class="hero__bg" style="background-image:url('assets/hero.jpg');"></div>
     <div class="hero__overlay"></div>
     <div class="hero__inner">
       <h1 class="hero__title">Past Workshop</h1>
-      <p class="hero__subtitle">驕主悉縺ｮ蠢懃畑蝨ｰ蝓溽ｵ梧ｸ亥ｭｦ繝ｯ繝ｼ繧ｯ繧ｷ繝ｧ繝・・</p>
+      <p class="hero__subtitle">過去の応用地域経済学ワークショップ</p>
     </div>
   </section>
 
   <main class="container">
   
-    <!-- 驕主悉縺ｮ髢句ぎ -->
+    <!-- 過去の開催 -->
     <section class="section" id="news" data-searchable>
-      <h2 class="section__title section__title--green">驕主悉縺ｮ髢句ぎ</h2>
+      <h2 class="section__title section__title--green">過去の開催</h2>
       <ul class="news">
         <li>
-          隨ｬ3蝗暸REW繧呈ｲ也ｸ・恁驍｣隕・ｸゅ〒髢句ぎ縺励∪縺励◆縲・          <a href="#past_2023">隧ｳ邏ｰ</a>
+          第3回AREWを沖縄県那覇市で開催しました。
+          <a href="#workshops">詳細</a>
         </li>
         <li>
-          隨ｬ2蝗暸REW繧剃ｺｬ驛ｽ逕｣讌ｭ螟ｧ蟄ｦ縺ｧ髢句ぎ縺励∪縺励◆縲・          <a href="#workshops">隧ｳ邏ｰ</a>
+          第2回AREWを京都産業大学で開催しました。
+          <a href="#workshops">詳細</a>
         </li>
         <li>
-          隨ｬ1蝗暸REW繧呈律譛ｬ螟ｧ蟄ｦ縺ｧ髢句ぎ縺励∪縺励◆縲・          <a href="./past_workshop/past_2023/past_2023_home.html">隧ｳ邏ｰ</a>
+          第1回AREWを日本大学で開催しました。
+          <a href="#workshops">詳細</a>
         </li>
       </ul>
 
     </section>
 
-    <!-- 蝓九ａ霎ｼ縺ｿ・・oogle Sheets / 繧ｹ繧ｱ繧ｸ繝･繝ｼ繝ｫ縺ｪ縺ｩ・・-->
+    <!-- 埋め込み（Google Sheets / スケジュールなど） -->
     <section class="section" data-searchable>
-      <h2 class="section__title">繧ｹ繧ｱ繧ｸ繝･繝ｼ繝ｫ</h2>
+      <h2 class="section__title">スケジュール</h2>
       <div class="embed">
         <iframe
           src="https://docs.google.com/spreadsheets/d/e/XXXXXXXX/pubhtml?widget=true&amp;headers=false"
           loading="lazy"
-          title="繧ｹ繧ｱ繧ｸ繝･繝ｼ繝ｫ"
+          title="スケジュール"
         ></iframe>
       </div>
       <p class="muted">
-        <!-- 窶ｻGoogle Sheets蛛ｴ縺ｧ縲後え繧ｧ繝悶↓蜈ｬ髢九阪＠縺欟RL繧定ｲｼ縺｣縺ｦ縺上□縺輔＞縲・->
+        <!-- ※Google Sheets側で「ウェブに公開」したURLを貼ってください。-->
       </p>
     </section>
 
-    <!-- 蝠丞粋縺・-->
+    <!-- 問合せ -->
     <section class="section" id="contact" data-searchable>
-      <h2 class="section__title">蝠丞粋縺・/h2>
+      <h2 class="section__title">問合せ</h2>
       <p>
         <a class="button button--ghost" href="https://forms.gle/XXXX" target="_blank" rel="noopener">
-          蝠丞粋縺帙ヵ繧ｩ繝ｼ繝
+          問合せフォーム
         </a>
-        <span class="muted">・医さ繝｡繝ｳ繝医・縺・▽縺ｧ繧よｭ楢ｿ弱〒縺呻ｼ・/span>
+        <span class="muted">（コメントはいつでも歓迎です）</span>
       </p>
     </section>
 
@@ -105,12 +110,12 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <small>ﾂｩ Seminar / Workshop</small>
+      <small>© Seminar / Workshop</small>
     </div>
   </footer>
 
   <script>
-    // 繝｢繝舌う繝ｫ繝｡繝九Η繝ｼ
+    // モバイルメニュー
     const btn = document.getElementById('hamburger');
     const nav = document.getElementById('mobileNav');
     btn?.addEventListener('click', () => {
@@ -118,7 +123,7 @@
       btn.setAttribute('aria-expanded', String(open));
     });
 
-    // ・井ｻｻ諢擾ｼ臥ｰ｡譏薙し繧､繝亥・讀懃ｴ｢・單ata-searchable 蜀・ｒ邨槭ｊ霎ｼ縺ｿ
+    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
     const q = document.getElementById('siteSearch');
     q?.addEventListener('input', () => {
       const keyword = q.value.trim().toLowerCase();
@@ -130,4 +135,3 @@
   </script>
 </body>
 </html>
-
