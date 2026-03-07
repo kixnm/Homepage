@@ -316,7 +316,7 @@ footer{
 .topbar .nav__link{
   text-decoration: none;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1;
   padding: 9px 12px;
