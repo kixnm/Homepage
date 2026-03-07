@@ -118,6 +118,26 @@ nav a:hover{
   background:rgba(255,255,255,.06);
 }
 
+.pdfbox{
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--panel);
+  height: 78vh;
+  min-height: 900px;
+  position: relative; /* ★追加 */
+}
+
+/* Dropbox iframe を強制的にpdfbox全面へ */
+.pdfbox iframe[src*="dropbox.com/dropins/embed"]{
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block;
+}
+
 /* Layout */
 .hero{
   margin-top:22px;
@@ -167,6 +187,15 @@ h1{
 }
 .subtitle{color:var(--muted); margin:0 0 14px}
 
+h2{
+  font-size: 24px;
+}
+
+.h2-section{
+  font-size: 24px;
+  color: rgb(34, 110, 147);
+}
+
 /* Badges / Buttons */
 .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 0}
 .badge{
@@ -199,7 +228,13 @@ h1{
 .btn:active{transform: translateY(0)}
 
 /* Content blocks */
-ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
+
+ul{margin:8px 0 0; 
+   padding-left:18px;
+   color:var(--muted);
+   font-size: 15px;
+   color: #0b1220;
+  }
 li{margin:6px 0}
 .list-tight li{margin:4px 0}
 

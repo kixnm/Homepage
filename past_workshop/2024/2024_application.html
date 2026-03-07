@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AREW Homepage</title>
+  <link rel="stylesheet" href="../../style.css" />
+
+  <!-- フォント（Google Sitesっぽく Lato 系） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 固定ヘッダー -->
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <a class="brand" href="#">AREW 2024</a>
+
+      <!-- PCナビ -->
+      <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
+        <a href="../../index.html" class="nav__link">Home</a>
+        <a href="./2024_home.html" class="nav__link">Workshop</a>
+        <a href="./2024_Access.html" class="nav__link">Access</a>
+        <a href="./2024_application.html" class="nav__link">Application</a>
+        <a href="./2024_program.html" class="nav__link">Program</a>
+        <a href="./2024_admin.html" class="nav__link">Administrative Office</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
+  <section id="home" class="hero" aria-label="トップ">
+    <div class="hero__bg" style="background-image:url('assets/hero.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <h1 class="hero__title">第2回 応用地域経済学ワークショップ</h1>
+      <h2 class="hero__subtitle">Applied Regional Economics Workshop 2023</h2>
+    </div>
+  </section>
+
+  <main class="container">
+  
+    <!-- Home -->
+    <section class="section" id="application" data-searchable>
+      <h2 class="h2-section">発表・参加申し込みフォーム</h2>
+      <ul class="application">
+        <p><s>報告申し込み</s>期限5月17日(金)_締め切りました!</p>
+        <p><s>参加申し込み</s>期限5月24日(金)_締め切りました!</p>
+        <p>→申し込みフォームに、懇親会 (18:00ころ～、4000-5000円程度を想定)への参加質問、お弁当 (1000円程度を想定)の希望質問も含めています。</p>
+    </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small>AREW Workshop</small>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニュー
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+
+    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
+    const q = document.getElementById('siteSearch');
+    q?.addEventListener('input', () => {
+      const keyword = q.value.trim().toLowerCase();
+      document.querySelectorAll('[data-searchable]').forEach(sec => {
+        const text = sec.innerText.toLowerCase();
+        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
