@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AREW Homepage</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <a class="brand" href="./2024_home.html">AREW 2024</a>
+      <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
+        <a href="../../index.html" class="nav__link">Home</a>
+        <a href="./2024_home.html" class="nav__link">Workshop</a>
+        <a href="./2024_Access.html" class="nav__link">Access</a>
+        <a href="./2024_application.html" class="nav__link">Application</a>
+        <a href="./2024_program.html" class="nav__link">Program</a>
+        <a href="./2024_admin.html" class="nav__link">Administrative Office</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
+  <section id="home" class="hero" aria-label="トップ">
+    <div class="hero__bg" style="background-image:url('assets/hero.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <h1 class="hero__title">第2回 応用地域経済学ワークショップ</h1>
+      <h2 class="hero__subtitle">Applied Regional Economics Workshop 2024</h2>
+    </div>
+  </section>
+
+    <main class="container">
+    <section class="section" id="program" data-searchable>
+        <h2 class="h2-section">プログラム</h2>
+        <div class="pdfbox">
+            <a
+              class="dropbox-embed"
+                href="https://www.dropbox.com/scl/fi/3a2ickf33j8hvnh6nakjj/2024AREW_.pdf?rlkey=u9ts8pvxl8ha3wogq4tee5z1n&st=el50cpt9&dl=0"
+              data-height="1200"
+              data-width="100%">
+            </a>
+        </div>
+
+        <!-- 任意：埋め込みが効かないブラウザ向けの保険リンク -->
+        <p class="muted" style="margin-top:.6rem;">
+        うまく表示されない場合は
+        <a href="https://www.dropbox.com/scl/fi/3a2ickf33j8hvnh6nakjj/2024AREW_.pdf?rlkey=u9ts8pvxl8ha3wogq4tee5z1n&st=el50cpt9&dl=0"
+            target="_blank" rel="noopener">こちら</a>
+        から開いてください。
+        </p>
+
+        <h2 class="h2-section">セッション</h2>
+        <p>アイデアセッション15-20分(会場ディスカッション込み)</p>
+        <p>通常報告30分(発表20分、会場ディスカッション10分)</p>
+    </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <small>AREW Workshop</small>
+      </div>
+    </footer>
+
+  <script 
+    type="text/javascript" 
+    src="https://www.dropbox.com/static/api/2/dropins.js" 
+    id="dropboxjs" 
+    data-app-key="6o2riawbfqr1xt8">
+  </script>
+
+  <script>
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  </script>
+</body>
+</html>

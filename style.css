@@ -118,13 +118,34 @@ nav a:hover{
   background:rgba(255,255,255,.06);
 }
 
+.pdfbox{
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--panel);
+  height: 78vh;
+  min-height: 900px;
+  position: relative; /* ★追加 */
+}
+
+/* Dropbox iframe を強制的にpdfbox全面へ */
+.pdfbox iframe[src*="dropbox.com/dropins/embed"]{
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block;
+}
+
 /* Layout */
 .hero{
+  position: relative;
+  min-height: 180px;
   margin-top:22px;
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap:18px;
-  align-items:stretch;
+  overflow: hidden;
+  display:flex;
+  align-items:flex-end;
 }
 @media (max-width: 860px){
   .hero{grid-template-columns: 1fr}
@@ -167,6 +188,15 @@ h1{
 }
 .subtitle{color:var(--muted); margin:0 0 14px}
 
+h2{
+  font-size: 24px;
+}
+
+.h2-section{
+  font-size: 24px;
+  color: rgb(34, 110, 147);
+}
+
 /* Badges / Buttons */
 .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 0}
 .badge{
@@ -199,7 +229,13 @@ h1{
 .btn:active{transform: translateY(0)}
 
 /* Content blocks */
-ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
+
+ul{margin:8px 0 0; 
+   padding-left:18px;
+   color:var(--muted);
+   font-size: 15px;
+   color: #0b1220;
+  }
 li{margin:6px 0}
 .list-tight li{margin:4px 0}
 
@@ -281,7 +317,7 @@ footer{
 .topbar .nav__link{
   text-decoration: none;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1;
   padding: 9px 12px;
@@ -372,11 +408,73 @@ footer{
 }
 
 .hero__inner{
-  padding-left: 26px;
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 18px 16px;
+}
+
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.28);
 }
 
 @media (max-width: 860px){
   .hero__inner{
-    padding-left: 16px;
+    padding: 0 18px 20px;
   }
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown__toggle{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.dropdown__menu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.dropdown__menu.is-open{
+  display: block;
+}
+
+.dropdown__item{
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #222;
+  white-space: nowrap;
+}
+
+.dropdown__item:hover{
+  background: #f5f5f5;
 }
