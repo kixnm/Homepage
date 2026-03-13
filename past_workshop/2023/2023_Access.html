@@ -26,18 +26,31 @@
         <a href="./2023_application.html" class="nav__link">Application</a>
         <a href="./2023_program.html" class="nav__link">Program</a>
         <a href="./2023_admin.html" class="nav__link">Administrative Office</a>
+        <div class="dropdown">
+          <button class="nav__link dropdown__toggle" type="button" aria-expanded="false">
+            Past workshop
+          </button>
+          <div class="dropdown__menu">
+            <a href="../2023/2023_home.html" class="dropdown__item">第1回(2023)</a>
+            <a href="../2024/2024_home.html" class="dropdown__item">第2回(2024)</a>
+            <a href="../2025/2025_home.html" class="dropdown__item">第3回(2025)</a>
+          </div>
+        </div>
       </nav>
 
-    <!-- モバイルメニュー
-    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
-        <a href="../../index.html" class="nav__link">Home</a>
-        <a href="./2023_home.html" class="nav__link">Workshop</a>
-        <a href="./2023_Access.html" class="nav__link">Access</a>
-        <a href="./2023_application.html" class="nav__link">Application</a>
-        <a href="./2023_program.html" class="nav__link">Program</a>
-        <a href="./2023_admin.html" class="nav__link">Administrative Office</a>
-    </nav> -->
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     </div>
+    
+    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+      <a href="index.html" class="nav__link">Home</a>
+    <a href="2026_home.html" class="nav__link">Workshop</a>
+    <a href="../2023/2023_home.html" class="nav__link">第1回(2023)</a>
+    <a href="../2024/2024_home.html" class="nav__link">第2回(2024)</a>
+    <a href="../2025/2025_home.html" class="nav__link">第3回(2025)</a>
+
+    </nav>
   </header>
 
   <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
@@ -58,9 +71,9 @@
       <ul class="news">
         <li>
           会場
-        </li>
         <p>日本大学経済学部(東京都千代田区神田三崎町1-3-2)</p>
         <p><u><b>3号館3階3131教室</b></u></p>
+        </li>
     </section>
 
     <!-- Official Access -->
@@ -85,19 +98,27 @@
     // モバイルメニュー
     const btn = document.getElementById('hamburger');
     const nav = document.getElementById('mobileNav');
+
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
     });
+  </script>
 
-    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
-    const q = document.getElementById('siteSearch');
-    q?.addEventListener('input', () => {
-      const keyword = q.value.trim().toLowerCase();
-      document.querySelectorAll('[data-searchable]').forEach(sec => {
-        const text = sec.innerText.toLowerCase();
-        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
-      });
+  <script>
+    const toggle = document.querySelector('.dropdown__toggle');
+    const menu = document.querySelector('.dropdown__menu');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        menu?.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 </body>

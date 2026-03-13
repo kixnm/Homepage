@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AREW Homepage</title>
-  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="style.css" />
 
   <!-- フォント（Google Sitesっぽく Lato 系） -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +18,37 @@
     <div class="topbar__inner">
       <a class="brand" href="#">AREW 2026</a>
 
-      <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
-      <a href="../../index.html" class="nav__link">Home</a>
+      <!-- PCナビ -->
+      <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
+      <a href="index.html" class="nav__link">Home</a>
       <a href="2026_home.html" class="nav__link">Workshop</a>
       <a href="2026_Access.html" class="nav__link">Access</a>
       <a href="2026_application.html" class="nav__link">Application</a>
       <a href="2026_program.html" class="nav__link">Program</a>
       <a href="2026_admin.html" class="nav__link">Administrative Office</a>
+        <div class="dropdown">
+          <button class="nav__link dropdown__toggle" type="button" aria-expanded="false">
+            Past workshop
+          </button>
+          <div class="dropdown__menu">
+            <a href="./past_workshop/2023/2023_home.html" class="dropdown__item">第1回(2023)</a>
+            <a href="./past_workshop/2024/2024_home.html" class="dropdown__item">第2回(2024)</a>
+            <a href="./past_workshop/2025/2025_home.html" class="dropdown__item">第3回(2025)</a>
+          </div>
+        </div>
+      </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+    
+    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+      <a href="index.html" class="nav__link">Home</a>
+    <a href="2026_home.html" class="nav__link">Workshop</a>
+    <a href="./past_workshop/2023/2023_home.html" class="nav__link">第1回(2023)</a>
+    <a href="./past_workshop/2024/2024_home.html" class="nav__link">第2回(2024)</a>
+    <a href="./past_workshop/2025/2025_home.html" class="nav__link">第3回(2025)</a>
     </nav>
   </header>
 
@@ -33,8 +57,8 @@
     <div class="hero__bg" style="background-image:url('assets/hero.jpg');"></div>
     <div class="hero__overlay"></div>
     <div class="hero__inner">
-      <h1 class="hero__title">第4回 応用地域経済学ワークショップ</h1>
-      <h2 class="hero__subtitle">Applied Regional Economics Workshop 2026</h2>
+      <h1 class="hero__title">Applied Regional Economics Workshop</h1>
+      <h2 class="hero__subtitle">応用地域経済学ワークショップ</h2>
     </div>
   </section>
 
@@ -43,25 +67,24 @@
     <!-- Home -->
     <section class="section" id="news" data-searchable>
       <h2 class="section__title section__title--green">開催概要</h2>
-      <ul class="news">
-        <li>
-          日次
-        </li>
-        <p>2026年6月20日(土) 21(日)開催予定</p>
-        <li>
-          会場
-        </li>
-        <p>広島県尾道市 会場は決まり次第更新</p>
-        <li>
-          参加費
-        </li>
-        <p>無料。交通費のみご負担ください。</p>
-        <li>
-          懇親会
-        </li>
-        <p>ワークショップ終了後会場付近で開催予定(詳細が決まり次第ご連絡いたします)</p>
-      </ul>
-
+        <ul class="news">
+          <li>
+            日次
+            <p>2026年6月20日(土) 21(日)開催予定</p>
+          </li>
+          <li>
+            会場
+            <p>広島県尾道市 会場は決まり次第更新</p>
+          </li>
+          <li>
+            参加費
+            <p>無料。交通費のみご負担ください。</p>
+          </li>
+          <li>
+            懇親会
+            <p>ワークショップ終了後会場付近で開催予定(詳細が決まり次第ご連絡いたします)</p>
+          </li>
+        </ul>
     </section>
 
     <!-- Session -->
@@ -88,19 +111,27 @@
     // モバイルメニュー
     const btn = document.getElementById('hamburger');
     const nav = document.getElementById('mobileNav');
+
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
     });
+  </script>
 
-    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
-    const q = document.getElementById('siteSearch');
-    q?.addEventListener('input', () => {
-      const keyword = q.value.trim().toLowerCase();
-      document.querySelectorAll('[data-searchable]').forEach(sec => {
-        const text = sec.innerText.toLowerCase();
-        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
-      });
+  <script>
+    const toggle = document.querySelector('.dropdown__toggle');
+    const menu = document.querySelector('.dropdown__menu');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        menu?.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 </body>

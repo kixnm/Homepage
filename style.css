@@ -372,14 +372,14 @@ footer{
   background: var(--text);
 }
 
-.nav--mobile{
+.topbar .nav--mobile{
   display: none;
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 18px 12px;
 }
 
-.nav--mobile.is-open{
+.topbar .nav--mobile.is-open{
   display: grid;
   grid-template-columns: 1fr;
   gap: 6px;
@@ -478,3 +478,5 @@ footer{
 .dropdown__item:hover{
   background: #f5f5f5;
 }
+
+
