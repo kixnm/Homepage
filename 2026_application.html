@@ -18,7 +18,7 @@
     <div class="topbar__inner">
       <a class="brand" href="#">AREW 2026</a>
     <!-- モバイルメニュー -->
-    <nav class="nav nav--pc" aria-label="モバイルナビゲーション">
+    <nav class="nav nav--pc" aria-label="グローバルナビゲーション">
         <a href="index.html" class="nav__link">Home</a>
         <a href="2026_home.html" class="nav__link">Workshop</a>
         <a href="2026_Access.html" class="nav__link">Access</a>
@@ -37,7 +37,7 @@
         </div>
     </nav>
 
-  <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     </div>
@@ -101,16 +101,6 @@
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
-    });
-
-    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
-    const q = document.getElementById('siteSearch');
-    q?.addEventListener('input', () => {
-      const keyword = q.value.trim().toLowerCase();
-      document.querySelectorAll('[data-searchable]').forEach(sec => {
-        const text = sec.innerText.toLowerCase();
-        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
-      });
     });
   </script>
 

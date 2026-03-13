@@ -103,16 +103,6 @@
       const open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
     });
-
-    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
-    const q = document.getElementById('siteSearch');
-    q?.addEventListener('input', () => {
-      const keyword = q.value.trim().toLowerCase();
-      document.querySelectorAll('[data-searchable]').forEach(sec => {
-        const text = sec.innerText.toLowerCase();
-        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
-      });
-    });
   </script>
 
   <script>

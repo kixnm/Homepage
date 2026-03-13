@@ -28,6 +28,11 @@
       <a href="2026_admin.html" class="nav__link">Administrative Office</a>
         <a href="past_workshop.html" class="nav__link">Past workshop</a>
       </nav>
+  
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+      </button>
+    </div>
 
     <!-- モバイルメニュー -->
     <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
@@ -37,31 +42,10 @@
       <a href="2026_application.html" class="nav__link">Application</a>
       <a href="2026_program.html" class="nav__link">Program</a>
       <a href="2026_admin.html" class="nav__link">Administrative Office</a>
-        <div class="dropdown">
-          <button class="nav__link dropdown__toggle" type="button" aria-expanded="false">
-            Past workshop
-          </button>
-          <div class="dropdown__menu">
-            <a href="./past_workshop/2023/2023_home.html" class="dropdown__item">第1回(2023)</a>
-            <a href="./past_workshop/2024/2024_home.html" class="dropdown__item">第2回(2024)</a>
-            <a href="./past_workshop/2025/2025_home.html" class="dropdown__item">第3回(2025)</a>
-          </div>
-        </div>
+      <a href="./past_workshop/2023/2023_home.html" class="nav__link">Past workshop(2023)</a>
+      <a href="./past_workshop/2024/2024_home.html" class="nav__link">Past workshop(2024)</a>
+      <a href="./past_workshop/2025/2025_home.html" class="nav__link">Past workshop(2025)</a>
       </nav>
-
-    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    </div>
-    
-    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
-      <a href="index.html" class="nav__link">Home</a>
-    <a href="2026_home.html" class="nav__link">Workshop</a>
-    <a href="./past_workshop/2023/2023_home.html" class="nav__link">第1回(2023)</a>
-    <a href="./past_workshop/2024/2024_home.html" class="nav__link">第2回(2024)</a>
-    <a href="./past_workshop/2025/2025_home.html" class="nav__link">第3回(2025)</a>
-
-    </nav>
   </header>
 
   <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
@@ -169,16 +153,6 @@
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
-    });
-
-    // （任意）簡易サイト内検索：data-searchable 内を絞り込み
-    const q = document.getElementById('siteSearch');
-    q?.addEventListener('input', () => {
-      const keyword = q.value.trim().toLowerCase();
-      document.querySelectorAll('[data-searchable]').forEach(sec => {
-        const text = sec.innerText.toLowerCase();
-        sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
-      });
     });
   </script>
 
