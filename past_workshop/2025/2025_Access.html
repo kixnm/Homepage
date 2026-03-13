@@ -26,8 +26,30 @@
         <a href="./2025_application.html" class="nav__link">Application</a>
         <a href="./2025_program.html" class="nav__link">Program</a>
         <a href="./2025_admin.html" class="nav__link">Administrative Office</a>
+        <div class="dropdown">
+          <button class="nav__link dropdown__toggle" type="button" aria-expanded="false">
+            Past workshop
+          </button>
+          <div class="dropdown__menu">
+            <a href="./past_workshop/2023/2023_home.html" class="dropdown__item">第1回(2023)</a>
+            <a href="./past_workshop/2024/2024_home.html" class="dropdown__item">第2回(2024)</a>
+            <a href="./past_workshop/2025/2025_home.html" class="dropdown__item">第3回(2025)</a>
+          </div>
+        </div>
       </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     </div>
+    
+    <nav class="nav nav--mobile" id="mobileNav" aria-label="モバイルナビゲーション">
+      <a href="index.html" class="nav__link">Home</a>
+    <a href="2026_home.html" class="nav__link">Workshop</a>
+    <a href="./past_workshop/2023/2023_home.html" class="nav__link">第1回(2023)</a>
+    <a href="./past_workshop/2024/2024_home.html" class="nav__link">第2回(2024)</a>
+    <a href="./past_workshop/2025/2025_home.html" class="nav__link">第3回(2025)</a>
+    </nav>
   </header>
 
   <!-- ヒーロー（Google Sitesっぽい大きい背景画像＋オーバーレイ） -->
@@ -46,8 +68,10 @@
     <section class="section" id="access" data-searchable>
       <h2 class="h2-section">会場</h2>
       <ul class="access">
+        <li>
         <p>JR九州ホテル ブラッサム那覇 多目的室(Okiei Room)</p>
         <p><u><b>(〒900-0013 沖縄県那覇市牧志2丁目16番1号 ) </b></u></p>
+        </li>
     </section>
 
     <!-- Official Access
@@ -72,6 +96,7 @@
     // モバイルメニュー
     const btn = document.getElementById('hamburger');
     const nav = document.getElementById('mobileNav');
+
     btn?.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(open));
@@ -85,6 +110,23 @@
         const text = sec.innerText.toLowerCase();
         sec.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
       });
+    });
+  </script>
+
+  <script>
+    const toggle = document.querySelector('.dropdown__toggle');
+    const menu = document.querySelector('.dropdown__menu');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        menu?.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 </body>
