@@ -479,4 +479,8 @@ footer{
   background: #f5f5f5;
 }
 
-
+.photo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
